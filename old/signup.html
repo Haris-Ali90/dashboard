@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Jugadoo</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- css files -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all"><!-- slider css -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- top header -->
+<div class="header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+			</div>
+			<div class="col-sm-6 col-md-6 header-right-w3_pvt">
+				<ul class="d-lg-flex d-md-flex d-sm-flex header-w3_pvt justify-content-lg-end justify-content-md-end justify-content-sm-end">
+					<li class="">
+						<span class=""><a href="signup.html"> Free Signup </a></span>
+					</li>
+					<li><span class="">|</span></li>
+					<li class="">
+						<span class=""><a href="#"> Download app </a></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //top header -->
+
+<!-- //header -->
+<header class="py-sm-3 pt-3 pb-2">
+	<div class="container">
+		<div class="row md-lg">
+		<div class="col-md-2 col-xs-2 col-sm-2">
+			<div id="logo">
+				<a href="homepage.html"><img class="img-responsive" src="images/logo.png"></a>
+			</div>
+			</div>
+		<!-- nav -->
+		<div class="col-md-7 col-xs-7 col-sm-7 navbar-div">
+		<nav class="d-lg-flex">
+			<ul class="menu ml-auto">
+				<li class="active"><a href="homepage.html">Home</a></li>
+				<li class=""><a href="services.html">Services</a></li>
+				<li class=""><a href="#">How it works</a></li>
+				<li class=""><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		</div>
+
+		<div class="col-md-3 d-flex">
+			<div class="login-icon ml-2">
+				<a class="user" href="login.html"> Prologin</a>
+			</div> &nbsp;&nbsp;
+			<div class="login-icon ml-2">
+				<a class="user bg-b" href="login.html">Login</a>
+			</div>
+
+		</div>
+	</div>
+	<div class="row mb-360">
+		<div class="col-xs-12 col-sm-12">
+			<a href="#"><img src="images/logo.png"></a>
+			<span class="fa fa-bars"></span>
+		</div>
+		<nav class="d-lg-flex">
+			<ul class="menu mt-2 ml-auto">
+				<li class="active"><a href="homepage.html">Home</a></li>
+				<li class=""><a href="services.html">Services</a></li>
+				<li class=""><a href="#">How it works</a></li>
+				<li class=""><a href="contact.html">Contact Us</a></li>
+				<li>
+					<div class="login-icon ml-2">
+				<a class="user" href="signup.html"> Signup</a>
+					</div> 
+				</li>
+				<li>
+					<div class="login-icon ml-2">
+				<a class="user bg-b" href="login.html">Login</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</div>
+		<div class="clear"></div>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<div class="banner" id="home">
+	<div class="layer">
+		<div class="container-fluid">
+			<div class="banner-text-agile">
+				<div class="row">
+					<div class="col-lg-6 pd-l-120">
+						<h2 class="heading-1 pad-t-20">Signup for Jugadoo</h2>
+						<!-- banner slider-->
+					<form class="pad-t-20" id="signupform">
+						<div class="row mrg-t-10">
+							<div class="col-md-6">
+								<label for="Name">Name *</label>
+								<input type="text" name="Name" class="form-control" id="Name" placeholder="Name">
+							</div>
+							<div class="col-md-6 pd-l-0">
+								<label for="Username">Username *</label>
+								<input type="text" name="Username" class="form-control" id="Username" placeholder="Username">
+							</div>
+						</div>
+						<div class="row mrg-t-10">
+							<div class="col-md-6">
+								<label for="Email">Email Address *</label>
+								<input type="email" name="Email" class="form-control" id="Email" placeholder="Email Address">
+							</div>
+							<div class="col-md-6 pd-l-0">
+								<label for="Password">Password *</label>
+								<input type="password" name="Password" class="form-control" id="Password" placeholder="Password">
+							</div>
+						</div>
+						<div class="row mrg-t-10">
+							<div class="col-md-6">
+								<label for="ConfirmPawssword">Confirm Password *</label>
+								<input type="password" name="confirm-password" class="form-control" id="ConfirmPawssword" placeholder="Confirm Pawssword">
+							</div>
+							<div class="col-md-6 pd-l-0">
+								<label for="MobNo">Mobile Number *</label>
+								<input type="text" name="MobNo" class="form-control" id="MobNo" placeholder="Add your mobile number">
+							</div>
+						</div>
+						<div class="row mrg-t-10">
+							<div class="col-md-6">
+								<label for="Role">Who are you? *</label>
+								<select class="form-control" id="Role">
+									<option value=""> - Select - </option>
+								</select>
+							</div>
+						</div>
+						<div class="row mrg-t-10">
+							<div class="col-md-12">
+								<label for="City">City(Your desired City for Your Event) *</label>
+								<select class="form-control" id="City">
+									<option value="">Please Select</option>
+								</select>
+							</div>
+						</div>
+						<div class="row mrg-t-10">
+							<div class="col-md-12">
+								<label for="Picture">Your Picture</label>
+								<input type="file" name="picture" id="Picture" class="form-control">
+								<input type="checkbox" name="check"> Check box to create your event
+							</div>
+						</div>
+						<br>
+						<button class="accbtn"><a href="signup-inner.html"> Create an account </a></button>
+					</form>
+					<!-- //banner slider-->
+
+					</div>
+					<div class="col-lg-6 col-md-12 mt-lg-0 mt-5 p-0">
+						<img src="images/img1.png" alt="" class="img-fluid" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+
+<!-- download -->
+
+<section class="download" id="download">
+<div class="container">
+	<div class="row pad-t-40">
+		<div class="col-md-12">
+		<div class="text-center">
+			<p class="down">DOWNLOAD</p>
+			<p class="mob-app f-s-30">Mobile App</p>
+		</div>	
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-md-6">
+	<div class="download-sec">
+	<div class="download-text">
+		<h4>Download the <b> Jugadoo </b> app free! <br> Get Exciting New Offers</h4>
+		<p class="desc black">Get outstanding customer service & highest quality maintenance work.</p>
+		<ul>
+			<li>
+				<a href="#" target="_blank" title="">
+					<!-- <i class="fa fa-apple"></i>
+					<span>App Store</span>
+					<p>Available now on the</p> -->
+					<img src="images/googleplay.png" class="img-responsive">
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_blank" title="Google Play Store App Link">
+					<img src="images/appstore.png" class="img-responsive">
+					<!-- <i class="fa fa-android"></i>
+					<span>Google Play</span>
+					<p>Get in on</p> -->
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+		<div class="col-lg-6 col-md-6">
+			<div class="download-img">
+		<img src="images/download.png" alt="">
+	</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<!-- //download -->
+
+
+<!-- appointment -->
+<section class="appointment text-center py-5">
+	<div class="container py-sm-3">
+		<p>WE ARE AVAILABLE 24 HOURS, 7 DAYS!</p>
+		<h4 class="mt-3">contact@jugadoo.com</h4>
+	</div>
+</section>
+<!-- //appointment -->
+
+<!-- footer -->
+<footer class="py-5 desc">
+	<div class="container py-sm-3">
+		<div class="row footer-grids">
+			<div class="col-lg-3 col-md-3 col-sm-6 mb-lg-0 mb-sm-5 mb-4">
+				<img src="images/logo.png" class="img-responsive width-150">
+				<ul class="pad-t-20">
+					<li><a href="#"> About Us</a></li>
+					<li><a href="#"> Blog</a></li>
+					<li><a href="#"> Hep Center</a></li>
+					<li><a href="#"> Become a Jugadoo</a></li>
+					<li><a href="#"> Book a job</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-9 col-md-9 col-sm-6 mb-md-0 mb-sm-5 mb-4">
+				<h4 class="mb-4">Services</h4>
+				<div class="row pad-t-10">
+				<div class="col-md-3">
+				<ul>
+					<li><a href="#">Appliance Install</a></li>
+					<li><a href="#">Appliance Repair</a></li>
+					<li><a href="#">Artificial Turf</a></li>
+					<li><a href="#">Carpet Cleaning</a></li>
+					<li><a href="#">Decks & Fences</a></li>
+					<li><a href="#">Duct Cleaning</a></li>
+					<li><a href="#">Dryer Vent Cleaning</a></li>
+					<li><a href="#">BBQ Cleaning & Repair</a></li>
+				</ul>	
+				</div>
+				<div class="col-md-3">
+				<ul>
+					<li><a href="#">Tree Services</a></li>
+					<li><a href="#">Waterproofing</a></li>
+					<li><a href="#">Water & Sewage Damage</a></li>
+					<li><a href="#">Window & Eaves Cleaning</a></li>
+					<li><a href="#">Window Glass Repair</a></li>
+					<li><a href="#">Windows & Doors</a></li>
+					<li><a href="#">Smart Home Install</a></li>
+					<li><a href="#">Snow Removal</a></li>
+				</ul>	
+				</div>
+				<div class="col-md-3">
+				<ul>
+					<li><a href="#">Stone & Interlock</a></li>
+					<li><a href="#">Pest Control</a></li>
+					<li><a href="#">Plumbing</a></li>
+					<li><a href="#">Roofing</a></li>
+					<li><a href="#">Painting</a></li>
+					<li><a href="#">Moving & Delivery</a></li>
+					<li><a href="#">Tile & Grout Cleaning</a></li>
+					<li><a href="#">Powerwash, Stain & Seal</a></li>
+				</ul>	
+				</div>
+				<div class="col-md-3">
+				<ul>
+					<li><a href="#">Locksmith</a></li>
+					<li><a href="#">Junk Removal</a></li>
+					<li><a href="#">Gas Services</a></li>
+					<li><a href="#">Heating & Cooling</a></li>
+					<li><a href="#">Lawn Maintenance</a></li>
+					<li><a href="#">Handyman Services</a></li>
+					<li><a href="#">Mould Remediation</a></li>
+					<li><a href="#">Holiday Lights Installation</a></li>
+				</ul>	
+				</div>	
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- //footer -->
+
+<!-- copyright -->
+<div class="copyright">
+	<div class="container py-4">
+		<div class=" text-center">
+			<p>Jugadoo wesite 2019. All Rights Reserved </p>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+		
+<!-- move top -->
+<div class="move-top text-right">
+	<a href="#home" class="move-top"> 
+		<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
+	</a>
+</div>
+<!-- move top -->
+<script type="text/javascript">
+	$('.mb-360 span').click(function(){
+		$('.mb-360 .menu').toggle();
+	})
+	$(window).scroll(function(){
+    if ($(window).scrollTop() >= 300) {
+        $('header').addClass('fixed-header');
+    }
+    else {
+        $('header').removeClass('fixed-header');
+        $('header').css({'top':'auto!important'});
+    }
+});
+</script>
+</body>
+</html>

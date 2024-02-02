@@ -1,0 +1,3143 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "BASE URL : https://http://35.160.175.165/portfolio/hospital_care/api/ ",
+    "version": "1.0.1",
+    "title": "Webservices For Hospital Care Project",
+    "contact": {
+      "email": "test@test.com"
+    },
+    "license": {
+      "name": "Muhammad Abid/Yousuf Sadiq"
+    }
+  },
+  "host": "www.stagingic.com",
+  "basePath": "/portfolio/hospital_care/api",
+  "tags": [
+    {
+      "name": "MedicalStaff",
+      "description": "Medical Staff Operation"
+    },
+    {
+      "name": "Cms",
+      "description": "About content"
+    },
+    {
+      "name": "Categories",
+      "description": "Categories Related Apis"
+    },
+    {
+      "name": "Hospitals",
+      "description": "Hospital Related Apis"
+    },
+    {
+      "name": "Favorite",
+      "description": "Favorite Related Apis"
+    },
+    {
+      "name": "Review",
+      "description": "Review Related Apis"
+    },
+    {
+      "name": "Patient",
+      "description": "Patient Related Apis"
+    },
+    {
+      "name": "Post",
+      "description": "Post Related Apis"
+    },
+    {
+      "name": "Message",
+      "description": "Chat Messages"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+
+    "/medicalstaff/register": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Post Sign Up Form",
+        "description": "Create a new Medical Staff User.",
+        "operationId": "Register Medical Staff",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "Medical Staff User full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Medical Staff User email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "enum": ["male","female"],
+            "description": "Male /Female",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "description": "Medical staff User Phone",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "Medical staff User Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "Area Latitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "Area Longitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Medical staff User Password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password_confirmation",
+            "in": "formData",
+            "description": "Medical staff User Confirm Password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "prefix",
+            "in": "formData",
+            "description": "User Name Prefix",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "background",
+            "in": "formData",
+            "description": "User field Background",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year_of_experience",
+            "in": "formData",
+            "description": "Year of experience medical field",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qualification",
+            "in": "formData",
+            "description": "Qualification should be qoma seprated like BS,MCS,MS",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hospital",
+            "in": "formData",
+            "description": "Hospital name should be qoma seprated like Liaqat National, Jinnah",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "category_id",
+            "in": "formData",
+            "description": "Main Category",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "speciality_id",
+            "in": "formData",
+            "description": "Main Category Related Speciality",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "sub_speciality_id",
+            "in": "formData",
+            "description": " Speciality related Sub Speciality",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "profile_picture",
+            "in": "formData",
+            "description": "Profile image of the Doctor",
+            "required": false,
+            "type": "file"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+	"/patient/updateDeviceToken": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Update Device Token",
+        "description": "Update Device Token.",
+        "operationId": "Update Device Token",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "user_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "device_token",
+            "in": "formData",
+            "description": "device_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "device_type",
+            "in": "formData",
+            "description": "device_type",
+            "required": true,
+            "type": "string"
+          },
+		  {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/medicalstaff/update": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Post Update  Profile",
+        "description": "Update Medical Staff User Profile.",
+        "operationId": "Update Medical Staff",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+          "name": "token",
+          "in": "header",
+          "description": "Token that available in user object ",
+          "required": true,
+          "type": "string"
+          },
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "User full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "prefix",
+            "in": "formData",
+            "description": "User Name Prefix",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "background",
+            "in": "formData",
+            "description": "User field Background",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "User location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "User location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "User location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current User Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "year_of_experience",
+            "in": "formData",
+            "description": "Year of experience medical field",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qualification",
+            "in": "formData",
+            "description": "Qualification should be qoma seprated like BS,MCS,MS",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hospital",
+            "in": "formData",
+            "description": "Hospital name should be qoma seprated like Liaqat National, Jinnah",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "category_id",
+            "in": "formData",
+            "description": "Main Category",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "speciality_id",
+            "in": "formData",
+            "description": "Main Category Related Speciality",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "sub_speciality_id",
+            "in": "formData",
+            "description": " Speciality related Sub Speciality",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "profile_picture",
+            "in": "formData",
+            "description": "Profile image of the Doctor",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "promo_video",
+            "in": "formData",
+            "description": "Promo Video",
+            "required": false,
+            "type": "file"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/login": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Post Sign In Form",
+        "description": "Login as a medical staff.",
+        "operationId": "Login Medical Staff",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Medical staff user email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Medical Staff User password",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/logout": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Post Logout",
+        "description": "Logout from the user.",
+        "operationId": "Logout",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/about": {
+      "get": {
+        "tags": [
+          "Cms"
+        ],
+        "summary": "Get About Content",
+        "description": "",
+        "operationId": "Get About Content",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["ar","en"],
+            "description": "Language parameter like (ar/en)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/allhospital": {
+      "get": {
+        "tags": [
+          "Hospitals"
+        ],
+        "summary": "Get All Hospitals",
+        "description": "",
+        "operationId": "Get All Hospitals",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/allcategories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get All Categories",
+        "description": "",
+        "operationId": "Get All Categories",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["en","ar"],
+            "description": "en for english /ar for arabic",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/subcategories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get All Categories with their sub categories",
+        "description": "",
+        "operationId": "Get Sub Categories",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getcategories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get Categories with respect to parent id",
+        "description": "",
+        "operationId": "Get Categories with respect to parent Id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "Parent id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/categories/keyword": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get Categories with Keyword",
+        "description": "",
+        "operationId": "Get Categories with Keyword",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Enter Text for search ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/gethospital": {
+      "get": {
+        "tags": [
+          "Hospitals"
+        ],
+        "summary": "Get Hospitals with Keyword",
+        "description": "",
+        "operationId": "Get Hospitals with Keyword",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "hospital",
+            "in": "query",
+            "description": "Enter Text for search ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/removefavourite/{user_id}/{doctor_id}": {
+      "delete": {
+        "tags": [
+          "Favorite"
+        ],
+        "summary": "remove medical staff from favourite list",
+        "description": "",
+        "operationId": "medicalstaff",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "user_id",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "doctor_id",
+            "in": "path",
+            "description": "doctor_id",
+            "required": false,
+            "type": "integer",
+            "default": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getfollowers": {
+      "get": {
+        "tags": [
+          "Favorite"
+        ],
+        "summary": "Get all followers of specific doctor",
+        "description": "",
+        "operationId": "Get all followers of specific doctor",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "doctor_id",
+            "in": "query",
+            "description": "doctor_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/addfavourite": {
+      "post": {
+        "tags": [
+          "Favorite"
+        ],
+        "summary": "Add to Favorite list",
+        "description": "Add new medical staff to favorite list",
+        "operationId": "Add to Favorite",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "current user id ",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "doctor_id",
+            "in": "formData",
+            "description": "doctor id",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "state",
+            "in": "formData",
+            "description": "1 for favorite and 0 for unfavorite",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getfavouritedoctor": {
+      "get": {
+        "tags": [
+          "Favorite"
+        ],
+        "summary": "Get List of all favorite medical staff",
+        "description": "",
+        "operationId": "Get List of all favorite medical staff",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "user_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getreviews": {
+      "get": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Get List of all reviews of specific medical staff user",
+        "description": "",
+        "operationId": "Get List of all reviews of specific medical staff user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "doctor_id",
+            "in": "query",
+            "description": "doctor_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/addreview": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Add to Reviews",
+        "description": "write review for specific doctor",
+        "operationId": "Write Review",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "current user id ",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "doctor_id",
+            "in": "formData",
+            "description": "doctor id",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "review",
+            "in": "formData",
+            "description": "review",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rate",
+            "in": "formData",
+            "description": "rate should not be greater than 5",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/removereview/{user_id}/{doctor_id}": {
+      "delete": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "remove review",
+        "description": "",
+        "operationId": "remove review",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "user_id",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "doctor_id",
+            "in": "path",
+            "description": "doctor_id",
+            "required": false,
+            "type": "integer",
+            "default": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/editreview": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Edit Review",
+        "description": "Edit your own review",
+        "operationId": "Edit Review",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "current user id ",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "doctor_id",
+            "in": "formData",
+            "description": "doctor id",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "review",
+            "in": "formData",
+            "description": "review",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rate",
+            "in": "formData",
+            "description": "rate should not be greater than 5",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getmedicalstaffprofile":{
+      "get": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Get Medical Staff profile ",
+        "description": "",
+        "operationId": "Get Medical Staff profile",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "doctor_id",
+            "in": "query",
+            "description": "doctor_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/medicalstaff/facebooklogin": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Social login for medical staff",
+        "description": "Create a new Medical Staff through social login.",
+        "operationId": "Register Medical Staff through social login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "Medical Staff User full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Medical Staff User email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "enum": ["male","female"],
+            "description": "Male /Female",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "description": "Medical staff User Phone",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "Medical staff User Area",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "Area Latitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "Area Longitude",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "prefix",
+            "in": "formData",
+            "description": "User Name Prefix",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "background",
+            "in": "formData",
+            "description": "User field Background",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year_of_experience",
+            "in": "formData",
+            "description": "Year of experience medical field",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qualification",
+            "in": "formData",
+            "description": "Qualification should be qoma seprated like BS,MCS,MS",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "hospital",
+            "in": "formData",
+            "description": "Hospital name should be qoma seprated like Liaqat National, Jinnah",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "category_id",
+            "in": "formData",
+            "description": "Specialization related field",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "profile_picture",
+            "in": "formData",
+            "description": "Profile image of the Doctor",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "social_media_id",
+            "in": "formData",
+            "description": "social_media_id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "social_media_platform",
+            "in": "formData",
+            "description": "social_media_platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "device_type",
+            "in": "formData",
+            "description": "device_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "device_token",
+            "in": "formData",
+            "description": "device_type",
+            "required": false,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/medicalstaff/sociallogin": {
+      "post": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Social login for medical staff",
+        "description": "Create a new Medical Staff through social login.",
+        "operationId": "Register Medical Staff through social login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "social_media_id",
+            "in": "formData",
+            "description": "social_media_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/patient/facebooklogin": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Social login for Patient",
+        "description": "Create a new Patient account through social login.",
+        "operationId": "Register Patient account through social login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "Medical Staff User full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Medical Staff User email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dob",
+            "in": "formData",
+            "description": "Medical staff user date of birth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "description": "Medical staff user date of birth",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "profile_social_url",
+            "in": "formData",
+            "description": "Profile Social Url",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Medical staff User Password",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "social_media_id",
+            "in": "formData",
+            "description": "social_media_id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "social_media_platform",
+            "in": "formData",
+            "description": "social_media_platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "profile_picture",
+            "in": "formData",
+            "description": "Profile image of the Doctor",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "device_type",
+            "in": "formData",
+            "description": "device_type",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "device_token",
+            "in": "formData",
+            "description": "device_type",
+            "required": false,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/patient/sociallogin": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Social login for Patient",
+        "description": "Create a new Patient account through social login.",
+        "operationId": "Register Patient account through social login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "social_media_id",
+            "in": "formData",
+            "description": "social_media_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/removepost/{id}": {
+      "delete": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "remove post",
+        "description": "",
+        "operationId": "remove post",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "post id",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/patient/writepost": {
+    "post": {
+      "tags": [
+        "Patient"
+      ],
+      "summary": "write post from patient account",
+      "description": "write post from patient account",
+      "operationId": "Write Post",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+
+        {
+          "name": "token",
+          "in": "header",
+          "description": "Token that available in user object ",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "in": "formData",
+          "description": "current user id ",
+          "required": true,
+          "default": "0",
+          "type": "integer"
+        },
+        {
+          "name": "text",
+          "in": "formData",
+          "description": "text/information",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "latitude",
+          "in": "formData",
+          "description": "latitude",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "longitude",
+          "in": "formData",
+          "description": "longitude",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful operation"
+        }
+      }
+    }
+  },
+
+    "/patient/editpost": {
+    "post": {
+      "tags": [
+        "Patient"
+      ],
+      "summary": "Edit post from patient account",
+      "description": "Edit post from patient account",
+      "operationId": "Edit Post",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+
+        {
+          "name": "token",
+          "in": "header",
+          "description": "Token that available in user object ",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "in": "formData",
+          "description": "current user id ",
+          "required": true,
+          "default": "0",
+          "type": "integer"
+        },
+        {
+          "name": "post_id",
+          "in": "formData",
+          "description": "current user id ",
+          "required": true,
+          "default": "0",
+          "type": "integer"
+        },
+        {
+          "name": "text",
+          "in": "formData",
+          "description": "text for newsfeed",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful operation"
+        }
+      }
+    }
+  },
+
+    "/patient/register": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Post Sign Up Form",
+        "description": "Create a new Patient account.",
+        "operationId": "Register Patient",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "Patient full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Patient email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "enum": ["male","female"],
+            "description": "male /female",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dob",
+            "in": "formData",
+            "description": "Patient date of birth",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Patient Password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password_confirmation",
+            "in": "formData",
+            "description": "Patient Confirm Password",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/remove/user": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Delete User",
+        "description": "Delete User",
+        "operationId": "Delete User",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/patient/update": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Post Update  Profile",
+        "description": "Update Patient Profile.",
+        "operationId": "Update Patient",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_token",
+            "in": "formData",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "full_name",
+            "in": "formData",
+            "description": "Patient full name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dob",
+            "in": "formData",
+            "description": "Patient date of birth ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "background",
+            "in": "formData",
+            "description": "Patient Background",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "area",
+            "in": "formData",
+            "description": "Patient location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Patient Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "User location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "User location/Area",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "profession",
+            "in": "formData",
+            "description": "Patient profession",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "profile_picture",
+            "in": "formData",
+            "description": "Profile Picture",
+            "required": true,
+            "type": "file"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/forgotpassword": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Post Sign Up Form",
+        "description": "Forgot Password",
+        "operationId": "Forgot Password",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "email",
+            "required": true,
+            "type": "string"
+          }
+
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/patient/getprofile":{
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Get Patient profile ",
+        "description": "",
+        "operationId": "Get Patient profile",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "Patient_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/changepassword": {
+      "post": {
+        "tags": [
+          "Patient"
+        ],
+        "summary": "Post Change Password",
+        "description": "Change Password.",
+        "operationId": "Change Password",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "old_password",
+            "in": "formData",
+            "description": "Old Password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "New Password ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password_confirmation",
+            "in": "formData",
+            "description": "Password Confirmation",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/addmessage": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Post Message",
+        "description": "Message.",
+        "operationId": "Message",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "sender_id",
+            "in": "formData",
+            "description": "Current Sender Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "receiver_id",
+            "in": "formData",
+            "description": "Current Receiver Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "message",
+            "in": "formData",
+            "description": "Text Message",
+            "required": false,
+            "type": "string"
+          },
+		  {
+            "name": "file_name",
+            "in": "formData",
+            "description": "File Name",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "message_id",
+            "in": "formData",
+            "description": "Last Message Id",
+            "required": false,
+            "type": "integer",
+            "default": "0"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getthread":{
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Get Thread ",
+        "description": "",
+        "operationId": "Get Thread",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getmessage":{
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Get Thread Message ",
+        "description": "",
+        "operationId": "Get Thread Message",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "Id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "thread_id",
+            "in": "query",
+            "description": "Thread Id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/doctor/search":{
+      "get": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Search Api",
+        "description": "",
+        "operationId": "Search Api",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "Id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset",
+            "required": false,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit",
+            "required": false,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "search by Name or ID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "longitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "latitude",
+            "required": false,
+            "type": "string"
+          },
+		  {
+            "name": "distance",
+            "in": "query",
+            "description": "distance",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "hospital",
+            "in": "query",
+            "description": "hospital",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "physician_id",
+            "in": "query",
+            "description": "hospital",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "hospital",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+	"/threadstatuschange": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Change Status",
+        "description": "Change Status.",
+        "operationId": "Change Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current User Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "thread_id",
+            "in": "formData",
+            "description": "Current Thread Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "in": "formData",
+            "description": "Status",
+            "required": true,
+            "type": "string"
+          },
+
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/consultstatuschange": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Change Consultation Status",
+        "description": "Change Consultation Status.",
+        "operationId": "Change Consultation Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current User Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "thread_id",
+            "in": "formData",
+            "description": "Current Thread Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "consult_status",
+            "in": "formData",
+            "description": "consult Status",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/getnotifications":{
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Get Notification ",
+        "description": "",
+        "operationId": "Get Notification",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/changepushnotificationstatus": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Post Changed Puch Notification Status",
+        "description": "Changed Puch Notification Status.",
+        "operationId": "Changed Puch Notification Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "push_status",
+            "in": "formData",
+            "description": "Puch Status",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/changenewsfeednotificationstatus": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Post Changed Newsfeed Notification Status",
+        "description": "Changed Newsfeed Notification Status.",
+        "operationId": "Changed Newsfeed Notification Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "newsfeed_status",
+            "in": "formData",
+            "description": "Newsfeed Status",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/changemessagenotificationstatus": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Post Changed Message Notification Status",
+        "description": "Changed Message Notification Status.",
+        "operationId": "Changed Message Notification Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "message_status",
+            "in": "formData",
+            "description": "Message Status",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/changeavaibilitynotificationstatus": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "summary": "Post Changed Avaibility Notification Status",
+        "description": "Changed Avaibility Notification Status.",
+        "operationId": "Changed Avaibility Notification Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "Current Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "avaibility_status",
+            "in": "formData",
+            "description": "Avaibility Status",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/postlist": {
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Get all posts",
+        "description": "",
+        "operationId": "Get all psots",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "user_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "latitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "longitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Radius",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/postdetail/{user_id}": {
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Get all User Related Post",
+        "description": "",
+        "operationId": "Get all User Related post",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "user_id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "offset ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "limit ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/postlike": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Add to Like",
+        "description": "Add to Like",
+        "operationId": "Add to Like",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "current user id ",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "post_id",
+            "in": "formData",
+            "description": "post id",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+		  {
+            "name": "state",
+            "in": "formData",
+            "description": " 1 for like ,0 for unlike",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/postcomment": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "New Comment",
+        "description": "Write new comment",
+        "operationId": "Write new comment",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "current user id ",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "post_id",
+            "in": "formData",
+            "description": "post id",
+            "required": true,
+            "default": "0",
+            "type": "integer"
+          },
+          {
+            "name": "message",
+            "in": "formData",
+            "description": "Comment Message",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/doctor/removepost/{id}": {
+      "delete": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "remove post",
+        "description": "",
+        "operationId": "remove post",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "post id",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/doctor/writepost": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Create New Post Doctor",
+        "description": "Create a new Doctor post.",
+        "operationId": "Create Post",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "User id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "file_name[]",
+            "in": "formData",
+            "description": "Attached file array like file_name[]",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "text",
+            "in": "formData",
+            "description": "Message Description",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "description": "latitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "description": "longitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/doctor/editpost": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Edit Doctor Post",
+        "description": "Edit Doctor Post",
+        "operationId": "Edit Doctor Post",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "user_id",
+            "in": "formData",
+            "description": "User id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "file_name[]",
+            "in": "formData",
+            "description": "Attached file array like file_name[]",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "text",
+            "in": "formData",
+            "description": "Message Description",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "post_id",
+            "in": "formData",
+            "description": "Post Id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/share/video":{
+      "get": {
+        "tags": [
+          "MedicalStaff"
+        ],
+        "summary": "Share Video ",
+        "description": "Use this service to share promo video",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "description": "id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "latitude ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "longitude ",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "Token that available in user object ",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get Main Categories",
+        "description": "Get Main Categories",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["en","ar"],
+            "description": "en for english /ar for arabic",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/speciality": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get All Speciality",
+        "description": "Get All Speciality",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "Parent id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["en","ar"],
+            "description": "en for english /ar for arabic",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/sub/speciality": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get Sub Speciality",
+        "description": "Get Sub Speciality",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "parent_id",
+            "in": "query",
+            "description": "Parent id ",
+            "required": true,
+            "type": "integer",
+            "default": "0"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["en","ar"],
+            "description": "en for english /ar for arabic",
+            "required": true,
+            "type": "string"
+          }
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+
+    "/cms": {
+      "get": {
+        "tags": [
+          "Cms"
+        ],
+        "summary": "Static Content.",
+        "description": "Static Content.",
+        "operationId": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "enum": ["terms"],
+            "description": "keyword for static data like (terms)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "enum": ["ar","en"],
+            "description": "Language parameter like (ar/en)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    }
+
+  },
+
+  "securityDefinitions": {
+
+  },
+  "definitions": {
+
+  }
+}
